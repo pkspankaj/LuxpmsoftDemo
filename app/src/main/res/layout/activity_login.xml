@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--    // inside this data tag we will define view model-->
+    <!--    // coz view model directly connect with UI look the edit text which has tag-->
+    <!--    // android:text="@={viewmodel.email}" in edit text automatically assign to authviewmodel object email//-->
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.luxpmsoft.demo.login.AuthViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_login"
+
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_bg_login_right" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_bg_login"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_40dp"
+            android:layout_marginEnd="@dimen/_40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:context=".ui.auth.LoginActivity">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80dp"
+                android:layout_marginBottom="@dimen/_70dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cart_up" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_bg_rectangle"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_user" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editUsername"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.85"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/txt_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:text="@={viewmodel.email}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/ic_bg_rectangle"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_lock" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.85"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:background="@android:color/transparent"
+                    android:digits="@string/alpha_number_digits_for_password"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="@string/txt_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:text="@={viewmodel.password}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+
+
+            <!--        here see button is also connect with viewmodel onbuttonclicklistener function to work -->
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/img_bg_login_btn"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:onClick="@{viewmodel::onLoginButtonClick}"
+                android:paddingBottom="@dimen/_5dp"
+                android:text="@string/txt_login"
+                android:textColor="@color/bg_login"
+                android:textFontWeight="600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:fontFamily="@font/montserrat_regular"
+                android:padding="@dimen/_5dp"
+                android:text="@string/txt_forgot_password"
+                android:textColor="@color/white"
+                android:textFontWeight="500" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

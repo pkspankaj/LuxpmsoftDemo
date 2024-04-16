@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LuxpmsoftDemo</string>
+    <string name="txt_username">USERNAME</string>
+    <string name="txt_password">PASSWORD</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_forgot_password">Forgot password?</string>
+    <string name="ok">Ok</string>
+    <string name="alpha_number_digits_for_password">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !#@%&amp;</string>
+</resources>

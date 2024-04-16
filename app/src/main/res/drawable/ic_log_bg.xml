@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/bg_login" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_bg_login" />
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center|bottom"
+            android:src="@drawable/ic_bg_login_right" />
+    </item>
+</layer-list>
